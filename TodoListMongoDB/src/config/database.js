@@ -1,26 +1,11 @@
-// const { Sequelize } = require("sequelize");
-
-// const sequelize = new Sequelize({
-//   dialect: "sqlite",
-//   storage: "./db.sqlite",
-// });
-
-// async function init() {
-//   try {
-//     await sequelize.sync();
-//   } catch (error) {
-//     console.error("Error creating table:", error);
-//   }
-// }
-
-// init();
-
-// module.exports = sequelize;
-
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
 const mongoose = require("mongoose");
 
 async function main() {
-  await mongoose.connect(`mongodb://127.0.0.1:27017/${process.env.CONNECTIONSTRING}`);
+  await mongoose.connect(process.env.CONNECTIONSTRING, {
+    dbName: process.env.MONGO_DB_COLLECTION_NAME,
+  });
 }
 
 main().catch((err) => console.log(err));

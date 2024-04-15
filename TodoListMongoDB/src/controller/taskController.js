@@ -34,7 +34,6 @@ const getTaskById = (req, res) => {
 };
 
 const deleteTaskById = async (req, res) => {
-  // req.task.remove();
   await Task.deleteOne({ _id: req.task._id });
   res.status(204).end();
 };
