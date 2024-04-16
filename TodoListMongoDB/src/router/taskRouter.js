@@ -21,8 +21,8 @@ taskRouter.route("/tasks").get(getAll).post([postTaskValidator, errorMiddleware]
 
 taskRouter
   .route("/task/:id")
-  .get([pathIdValidator, errorMiddleware, findTaskById], getTaskById)
-  .put([pathIdValidator, putTaskValidator, errorMiddleware, findTaskById], updateTaskById)
-  .delete([pathIdValidator, findTaskById], deleteTaskById);
+  .get([errorMiddleware, findTaskById], getTaskById)
+  .put([putTaskValidator, errorMiddleware, findTaskById], updateTaskById)
+  .delete([findTaskById], deleteTaskById);
 
 module.exports = taskRouter;
