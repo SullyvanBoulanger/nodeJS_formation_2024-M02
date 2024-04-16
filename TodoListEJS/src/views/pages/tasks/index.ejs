@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../../partials/header'); %></header>
+
+    <main>
+      <table>
+        <thead>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Done</th>
+          <th>
+            <strong><a href="/tasks/create">Create</a></strong>
+          </th>
+        </thead>
+        <tbody>
+          <% tasks.forEach((task) => { %>
+          <tr>
+            <td><%= task._id %></td>
+            <td><%= task.title %></td>
+            <td><%= task.description %></td>
+            <td><%= task.date_debut %></td>
+            <td><%= task.date_fin %></td>
+            <td><%= task.done %></td>
+            <td><a href="/task/<%= task._id %>/update">Edit</a></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </main>
+
+    <footer><%- include('../../partials/footer'); %></footer>
+  </body>
+</html>

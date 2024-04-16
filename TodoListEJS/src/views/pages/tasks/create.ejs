@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../../partials/header'); %></header>
+
+    <main>
+      <h1>Create</h1>
+
+      <form action="/tasks" method="post">
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" placeholder="Title ..." />
+
+        <br />
+
+        <label for="description">date_debut</label>
+        <input
+          id="description"
+          name="description"
+          type="text"
+          placeholder="Description ..."
+        />
+
+        <br />
+
+        <label for="date_debut">Start Date (dd/mm/yyyy)</label>
+        <input
+          id="date_debut"
+          name="date_debut"
+          type="text"
+          placeholder="dd/mm/yyyy"
+        />
+
+        <label for="date_fin">End Date (dd/mm/yyyy)</label>
+        <input
+          id="date_fin"
+          name="date_fin"
+          type="text"
+          placeholder="dd/mm/yyyy"
+        />
+
+        <label for="done">Done</label>
+        <input id="done" name="done" type="checkbox" />
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+
+    <footer><%- include('../../partials/footer'); %></footer>
+  </body>
+</html>
